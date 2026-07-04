@@ -1,0 +1,51 @@
+---
+import { siteContent } from '../../data/content';
+
+const { brand, nav } = siteContent;
+---
+
+<header class="border-b border-line">
+  <div
+    class="mx-auto flex max-w-content items-center justify-between px-6 py-5 md:px-10"
+  >
+    <a
+      href="/"
+      class="font-display text-lg font-semibold tracking-tight text-ink"
+    >
+      {brand.shortName}
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Principal">
+      {
+        nav.map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-ink-muted transition-colors hover:text-ink"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <!-- Navegación móvil: anclas compactas, sin JS -->
+    <nav class="flex items-center gap-5 md:hidden" aria-label="Principal móvil">
+      {
+        nav.slice(0, 2).map((link) => (
+          <a
+            href={link.href}
+            class="text-sm text-ink-muted transition-colors hover:text-ink"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="#contacto"
+        class="text-sm font-medium text-ink underline decoration-sage decoration-2 underline-offset-4"
+      >
+        Contacto
+      </a>
+    </nav>
+  </div>
+</header>

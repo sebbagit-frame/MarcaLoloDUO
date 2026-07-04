@@ -1,0 +1,72 @@
+---
+import { siteContent } from '../../data/content';
+
+const { contact } = siteContent;
+---
+
+<section id="contacto" class="border-t border-line bg-sage-soft/30">
+  <div class="mx-auto max-w-content px-6 py-24 md:px-10 md:py-32">
+    <div class="grid gap-12 md:grid-cols-12 md:gap-8">
+      <div class="md:col-span-6">
+        <p
+          class="text-xs font-medium uppercase tracking-wideish text-ink-muted"
+        >
+          {contact.eyebrow}
+        </p>
+        <h2
+          class="mt-5 font-display text-3xl font-medium leading-snug tracking-tight md:text-4xl"
+        >
+          {contact.title}
+        </h2>
+        <p class="mt-5 max-w-md text-base leading-relaxed text-ink-muted md:text-lg">
+          {contact.description}
+        </p>
+
+        <a
+          href={`mailto:${contact.email}`}
+          class="mt-10 inline-block font-display text-2xl font-medium text-ink underline decoration-sage decoration-2 underline-offset-8 transition-colors hover:decoration-sage-deep md:text-3xl"
+        >
+          {contact.email}
+        </a>
+      </div>
+
+      <div class="md:col-span-4 md:col-start-9">
+        <dl class="space-y-8">
+          <div>
+            <dt class="text-xs uppercase tracking-wideish text-ink-muted">
+              Teléfono
+            </dt>
+            <dd class="mt-2 text-base text-ink">{contact.phone}</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wideish text-ink-muted">
+              Base
+            </dt>
+            <dd class="mt-2 text-base text-ink">{contact.location}</dd>
+          </div>
+          <div>
+            <dt class="text-xs uppercase tracking-wideish text-ink-muted">
+              Redes
+            </dt>
+            <dd class="mt-2 flex flex-col gap-2">
+              {
+                contact.socials
+                  .filter((social) => social.platform !== 'email')
+                  .map((social) => (
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="text-base text-ink transition-colors hover:text-sage-deep"
+                    >
+                      {social.label}
+                    </a>
+                  ))
+              }
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
