@@ -25,11 +25,18 @@ export const siteContent: SiteContent = {
     { label: 'Contacto', href: '#contacto' },
   ],
 
+  ui: {
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+    mobileNav: 'Navegación móvil',
+    mainNav: 'Principal',
+  },
+
   hero: {
     eyebrow: 'Dúo musical · Buenos Aires',
     title: 'Canciones que suenan a casa.',
     subtitle:
-      'Somos MARCA LOLO: dos voces y dos guitarras que se encuentran en un repertorio que va del folclore a la canción de autor. Música en vivo, sin artificios, pensada para quedarse en la memoria.',
+      'Somos MARCA LOLO: dos voces y su guitarra que se encuentran en un repertorio que va del folclore a la canción de autor. Música en vivo, sin artificios, pensada para quedarse en la memoria.',
     ctaPrimary: { label: 'Escuchanos en vivo', href: '#contacto' },
     ctaSecondary: { label: 'Conocé al dúo', href: '#sobre' },
     imageAlt: 'Retrato de MARCA LOLO con sus guitarras',

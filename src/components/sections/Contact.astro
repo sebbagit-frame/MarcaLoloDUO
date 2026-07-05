@@ -7,7 +7,7 @@ const { contact } = siteContent;
 <section id="contacto" class="border-t border-line bg-sage-soft/30">
   <div class="mx-auto max-w-content px-6 py-24 md:px-10 md:py-32">
     <div class="grid gap-12 md:grid-cols-12 md:gap-8">
-      <div class="md:col-span-6">
+      <div class="md:col-span-6" data-reveal>
         <p
           class="text-xs font-medium uppercase tracking-wideish text-ink-muted"
         >
@@ -30,7 +30,11 @@ const { contact } = siteContent;
         </a>
       </div>
 
-      <div class="md:col-span-4 md:col-start-9">
+      <div
+        class="md:col-span-4 md:col-start-9"
+        data-reveal
+        style="--reveal-delay: 150ms"
+      >
         <dl class="space-y-8">
           <div>
             <dt class="text-xs uppercase tracking-wideish text-ink-muted">

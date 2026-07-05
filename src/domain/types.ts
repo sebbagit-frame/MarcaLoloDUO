@@ -84,6 +84,13 @@ export interface ContactContent {
   readonly socials: readonly SocialLink[];
 }
 
+export interface UiLabels {
+  readonly openMenu: string;
+  readonly closeMenu: string;
+  readonly mobileNav: string;
+  readonly mainNav: string;
+}
+
 export interface SiteContent {
   readonly meta: {
     readonly title: string;
@@ -96,6 +103,7 @@ export interface SiteContent {
     readonly tagline: string;
   };
   readonly nav: readonly NavLink[];
+  readonly ui: UiLabels;
   readonly hero: HeroContent;
   readonly about: AboutContent;
   readonly services: ServicesContent;
