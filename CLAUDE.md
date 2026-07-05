@@ -47,3 +47,5 @@ lolo-duo-web/
     │   └── content.ts      → Fuente única de verdad (toda la información consumida por la UI)
     ├── layouts/
     │   └── Layout.astro    → HTML wrapper principal (fuentes, meta tags, color de fondo base)
+    └── pages/
+        └── index.astro     → Página principal que ensambla todas las secciones del sitio
