@@ -1,7 +1,8 @@
 ---
 import { siteContent } from '../../data/content';
+import MobileMenu from '../ui/MobileMenu';
 
-const { brand, nav } = siteContent;
+const { brand, nav, ui } = siteContent;
 ---
 
 <header
@@ -19,7 +20,7 @@ const { brand, nav } = siteContent;
       {brand.shortName}
     </a>
 
-    <nav class="hidden items-center gap-8 md:flex" aria-label="Principal">
+    <nav class="hidden items-center gap-8 md:flex" aria-label={ui.mainNav}>
       {
         nav.map((link) => (
           <a
@@ -32,25 +33,12 @@ const { brand, nav } = siteContent;
       }
     </nav>
 
-    <!-- Navegación móvil: anclas compactas, sin JS -->
-    <nav class="flex items-center gap-5 md:hidden" aria-label="Principal móvil">
-      {
-        nav.slice(0, 2).map((link) => (
-          <a
-            href={link.href}
-            class="text-sm text-ink-muted transition-colors hover:text-ink"
-          >
-            {link.label}
-          </a>
-        ))
-      }
-      <a
-        href="#contacto"
-        class="text-sm font-medium text-ink underline decoration-sage decoration-2 underline-offset-4"
-      >
-        Contacto
-      </a>
-    </nav>
+    <!-- Menú hamburguesa: isla React hidratada solo en pantallas < md -->
+    <MobileMenu
+      links={nav}
+      labels={ui}
+      client:media="(max-width: 767px)"
+    />
   </div>
 </header>
 

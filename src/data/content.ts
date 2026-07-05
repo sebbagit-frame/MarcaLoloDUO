@@ -25,6 +25,13 @@ export const siteContent: SiteContent = {
     { label: 'Contacto', href: '#contacto' },
   ],
 
+  ui: {
+    openMenu: 'Abrir menú',
+    closeMenu: 'Cerrar menú',
+    mobileNav: 'Navegación móvil',
+    mainNav: 'Principal',
+  },
+
   hero: {
     eyebrow: 'Dúo musical · Buenos Aires',
     title: 'Canciones que suenan a casa.',
