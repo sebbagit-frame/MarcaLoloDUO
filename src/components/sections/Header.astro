@@ -4,9 +4,13 @@ import { siteContent } from '../../data/content';
 const { brand, nav } = siteContent;
 ---
 
-<header class="border-b border-line">
+<header
+  id="site-header"
+  data-scrolled="false"
+  class="group fixed top-0 z-50 w-full border-b border-line/60 bg-cream/0 transition-all duration-300 data-[scrolled=true]:border-line data-[scrolled=true]:bg-cream/85 data-[scrolled=true]:shadow-[0_10px_30px_-24px_rgba(34,37,33,0.25)] data-[scrolled=true]:backdrop-blur-md"
+>
   <div
-    class="mx-auto flex max-w-content items-center justify-between px-6 py-5 md:px-10"
+    class="mx-auto flex max-w-content items-center justify-between px-6 py-5 transition-[padding] duration-300 group-data-[scrolled=true]:py-3 md:px-10"
   >
     <a
       href="/"
@@ -49,3 +53,31 @@ const { brand, nav } = siteContent;
     </nav>
   </div>
 </header>
+
+<!-- Compensa la altura inicial del header fijo para que el Hero no quede debajo -->
+<div class="h-[69px]" aria-hidden="true"></div>
+
+<script>
+  const header = document.getElementById('site-header');
+
+  if (header) {
+    let ticking = false;
+
+    const update = (): void => {
+      header.dataset.scrolled = window.scrollY > 24 ? 'true' : 'false';
+      ticking = false;
+    };
+
+    update();
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(update);
+        }
+      },
+      { passive: true }
+    );
+  }
+</script>

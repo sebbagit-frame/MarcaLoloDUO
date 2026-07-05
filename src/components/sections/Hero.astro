@@ -10,19 +10,32 @@ const { hero } = siteContent;
   >
     <!-- Columna de texto -->
     <div class="max-w-xl">
-      <p class="text-xs font-medium uppercase tracking-wideish text-ink-muted">
+      <p
+        class="text-xs font-medium uppercase tracking-wideish text-ink-muted"
+        data-reveal
+      >
         {hero.eyebrow}
       </p>
       <h1
         class="mt-6 font-display text-4xl font-medium leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl"
+        data-reveal
+        style="--reveal-delay: 90ms"
       >
         {hero.title}
       </h1>
-      <p class="mt-6 text-base leading-relaxed text-ink-muted md:text-lg">
+      <p
+        class="mt-6 text-base leading-relaxed text-ink-muted md:text-lg"
+        data-reveal
+        style="--reveal-delay: 180ms"
+      >
         {hero.subtitle}
       </p>
 
-      <div class="mt-10 flex flex-wrap items-center gap-4">
+      <div
+        class="mt-10 flex flex-wrap items-center gap-4"
+        data-reveal
+        style="--reveal-delay: 270ms"
+      >
         <a
           href={hero.ctaPrimary.href}
           class="inline-block bg-ink px-7 py-3.5 text-sm font-medium text-cream transition-colors hover:bg-ink-muted"
@@ -39,7 +52,7 @@ const { hero } = siteContent;
     </div>
 
     <!-- Columna visual: placeholder hasta subir la foto del Drive -->
-    <div class="relative">
+    <div class="relative" data-reveal style="--reveal-delay: 150ms">
       {
         hero.imageSrc ? (
           <img
