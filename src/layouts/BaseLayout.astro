@@ -32,6 +32,16 @@ const {
       // Marca que hay JS disponible: los estilos de reveal solo se aplican
       // bajo `html.js`, así el contenido nunca queda oculto sin JavaScript.
       document.documentElement.classList.add('js');
+
+      // Al recargar, la página siempre arranca arriba de todo:
+      // sin esto el navegador restaura la posición de scroll anterior.
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+      window.addEventListener('pageshow', () => {
+        // 'instant' evita que el scroll-smooth global anime el reseteo.
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      });
     </script>
   </head>
   <body class="bg-cream font-sans text-ink antialiased">
